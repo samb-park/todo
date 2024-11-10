@@ -16,6 +16,7 @@ A simple Todo application built with React, Recoil, and Axios. This app allows u
 - **Recoil**: State management for managing global state in the app.
 - **Axios**: Used for making API requests to manage todos.
 - **Tailwind CSS**: CSS framework for styling components.
+- **MockAPI**: Used as a mock backend for CRUD operations on todos.
 
 ## Project Structure
 
