@@ -1,10 +1,9 @@
-// src/components/TodoList.jsx
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { todoAtom } from "../states/todoAtom";
 import { fetchTodos, deleteTodo } from "../api/todoApi";
 
-const TodoList = ({ onSelectTodo }) => {
+const TodoList = ({ onSelectTodo, clearSelectedTodo }) => {
   const [todos, setTodos] = useRecoilState(todoAtom);
 
   useEffect(() => {
@@ -18,6 +17,8 @@ const TodoList = ({ onSelectTodo }) => {
   const handleDelete = async (id) => {
     await deleteTodo(id);
     setTodos(todos.filter((todo) => todo.id !== id));
+
+    clearSelectedTodo();
   };
 
   return (
